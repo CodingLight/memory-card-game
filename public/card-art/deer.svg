@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title>Little Deer</title>
+  <desc>Cute deer sticker</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5fff0" />
+      <stop offset="100%" stop-color="#cbeeb9" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#9bd084" flood-opacity="0.22" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="140" fill="url(#bg)" />
+  <g opacity="0.35">
+    <circle cx="92" cy="104" r="34" fill="#ffffff" />
+    <circle cx="420" cy="118" r="28" fill="#ffffff" />
+    <circle cx="392" cy="392" r="22" fill="#ffffff" />
+  </g>
+  <g filter="url(#shadow)">
+    <g transform="translate(96 74)">
+      <path d="M96 60c-24-42-48-44-64-56M108 80c-42-14-64-26-84-54M224 60c24-42 48-44 64-56M212 80c42-14 64-26 84-54" fill="none" stroke="#9b724c" stroke-width="16" stroke-linecap="round" />
+      <circle cx="160" cy="224" r="132" fill="#c28e61" />
+      <ellipse cx="160" cy="248" rx="72" ry="58" fill="#f8dfca" />
+      <circle cx="118" cy="204" r="10" fill="#5c4739" />
+      <circle cx="202" cy="204" r="10" fill="#5c4739" />
+      <ellipse cx="160" cy="236" rx="16" ry="12" fill="#5c4739" />
+      <path d="M132 272c18 14 50 14 68 0" fill="none" stroke="#5c4739" stroke-width="9" stroke-linecap="round" />
+      <circle cx="88" cy="242" r="16" fill="#ffd7df" />
+      <circle cx="232" cy="242" r="16" fill="#ffd7df" />
+    </g>
+
+  </g>
+</svg>

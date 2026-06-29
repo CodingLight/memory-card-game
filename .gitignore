@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 .trae
+.venv/
 dist
 dist-ssr
 *.local

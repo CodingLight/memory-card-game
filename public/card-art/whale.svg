@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title>Whale Bay</title>
+  <desc>???????????</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#effcff" />
+      <stop offset="100%" stop-color="#bff3ea" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#81d6c6" flood-opacity="0.22" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="140" fill="url(#bg)" />
+  <g opacity="0.35">
+    <circle cx="92" cy="104" r="34" fill="#ffffff" />
+    <circle cx="420" cy="118" r="28" fill="#ffffff" />
+    <circle cx="392" cy="392" r="22" fill="#ffffff" />
+  </g>
+  <g filter="url(#shadow)">
+    <g transform="translate(74 128)">
+      <path d="M34 150c0-72 66-124 156-124 86 0 132 40 162 92 32 0 62 22 78 54-20 16-44 28-78 32-24 42-74 72-146 72-100 0-172-54-172-126z" fill="#72cdd6" />
+      <path d="M274 96c26 0 44 16 44 38 0 16-8 28-24 34" fill="none" stroke="#5bb6c0" stroke-width="16" stroke-linecap="round" />
+      <circle cx="146" cy="136" r="10" fill="#436677" />
+      <path d="M170 180c22 16 50 16 72 0" fill="none" stroke="#436677" stroke-width="10" stroke-linecap="round" />
+      <circle cx="272" cy="56" r="18" fill="#9beaf3" />
+      <circle cx="304" cy="24" r="14" fill="#c9f5fa" />
+      <circle cx="334" cy="62" r="12" fill="#dffafd" />
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title>Candy Cake</title>
+  <desc>Cute cake sticker</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8f0" />
+      <stop offset="100%" stop-color="#ffdba5" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#efb96d" flood-opacity="0.22" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="140" fill="url(#bg)" />
+  <g opacity="0.35">
+    <circle cx="92" cy="104" r="34" fill="#ffffff" />
+    <circle cx="420" cy="118" r="28" fill="#ffffff" />
+    <circle cx="392" cy="392" r="22" fill="#ffffff" />
+  </g>
+  <g filter="url(#shadow)">
+    <g transform="translate(102 110)">
+      <rect x="72" y="214" width="236" height="78" rx="32" fill="#f7b46d" />
+      <rect x="56" y="152" width="268" height="80" rx="34" fill="#fff0c9" />
+      <path d="M56 172c22 22 40 22 62 0s40-22 62 0 40 22 62 0 40-22 62 0 18 22 20 0v50H56z" fill="#fff8ee" />
+      <circle cx="118" cy="128" r="28" fill="#ff88a8" />
+      <circle cx="186" cy="114" r="28" fill="#ff88a8" />
+      <circle cx="254" cy="128" r="28" fill="#ff88a8" />
+      <path d="M118 102c12-22 22-26 30-26-4 18-10 28-24 38" fill="#8bd18e" />
+      <path d="M186 88c12-22 22-26 30-26-4 18-10 28-24 38" fill="#8bd18e" />
+      <path d="M254 102c12-22 22-26 30-26-4 18-10 28-24 38" fill="#8bd18e" />
+    </g>
+
+  </g>
+</svg>

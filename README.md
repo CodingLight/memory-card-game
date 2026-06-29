@@ -1,16 +1,161 @@
-# React + Vite
+# Memory Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个基于 React 和 Vite 构建的记忆卡牌小游戏。玩家需要在 4 x 4 的卡片网格中翻开卡牌、记住位置，并尽可能用更少的操作次数完成全部配对。
 
-Currently, two official plugins are available:
+## 项目简介
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+这个项目实现了一个经典的记忆配对玩法：
 
-## React Compiler
+- 卡组由 8 组水果表情组成，共 16 张卡片
+- 每次点击可以翻开一张卡片
+- 连续翻开的两张卡片如果内容相同，则判定为配对成功
+- 如果不匹配，卡片会在短暂展示后自动翻回
+- 页面顶部会实时展示当前分数和操作次数
+- 全部配对完成后会弹出胜利提示，并在 5 秒后自动开始新一局
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+项目整体采用组件化结构，核心状态和规则被集中封装在自定义 Hook 中，便于维护和扩展。
 
-## Expanding the ESLint configuration
+## 功能特性
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 基于随机洗牌的记忆卡牌玩法
+- 支持实时统计分数和点击次数
+- 支持手动重置并立即开始新游戏
+- 支持通关后的胜利弹层提示
+- 支持通关后自动重开
+- 适配桌面端和移动端的基础响应式布局
+
+## 技术栈
+
+- React 18
+- Vite 8
+- JavaScript JSX
+- ESLint
+- 原生 CSS
+
+## 本地运行
+
+### 环境要求
+
+- Node.js LTS 版本
+- npm
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 启动开发环境
+
+```bash
+npm run dev
+```
+
+启动后按照终端输出的本地地址，在浏览器中打开即可。
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+### 本地预览构建结果
+
+```bash
+npm run preview
+```
+
+### 代码检查
+
+```bash
+npm run lint
+```
+
+## 可用脚本
+
+| 命令 | 说明 |
+| --- | --- |
+| `npm run dev` | 启动 Vite 开发服务器 |
+| `npm run build` | 构建生产环境资源 |
+| `npm run preview` | 本地预览构建后的产物 |
+| `npm run lint` | 运行 ESLint 进行代码检查 |
+
+## 项目结构
+
+```text
+memory-card/
+├─ src/
+│  ├─ components/
+│  │  ├─ Card.jsx
+│  │  ├─ GameHeader.jsx
+│  │  └─ WinMessage.jsx
+│  ├─ hooks/
+│  │  └─ useGameLogic.js
+│  ├─ App.jsx
+│  ├─ index.css
+│  └─ main.jsx
+├─ package.json
+├─ vite.config.js
+├─ eslint.config.js
+└─ README.md
+```
+
+## 核心模块说明
+
+### `src/hooks/useGameLogic.js`
+
+这是项目的核心逻辑模块，负责统一管理游戏状态和交互规则，包括：
+
+- 初始化并随机打乱卡组
+- 记录当前已翻开的第一张卡片
+- 判断两张卡片是否匹配
+- 配对成功时累计分数
+- 每次点击时累计操作次数
+- 配对失败时通过定时器延迟翻回
+- 通关后通过定时器自动开始新一局
+- 在重置或组件卸载时清理定时器，避免旧状态残留
+
+### `src/components/Card.jsx`
+
+负责渲染单张卡片，并根据卡片状态切换展示效果：
+
+- 未翻开时显示问号
+- 翻开后显示真实卡面
+- 已匹配卡片展示匹配态样式
+
+### `src/components/GameHeader.jsx`
+
+负责展示游戏标题、分数、操作次数，以及“重新开始”按钮。
+
+### `src/components/WinMessage.jsx`
+
+负责在玩家完成全部配对后显示胜利提示，并告知系统会自动开启新局。
+
+## 游戏规则
+
+1. 点击任意卡片将其翻开。
+2. 再点击第二张卡片进行配对。
+3. 如果两张卡片相同，则保留翻开状态并记为一次成功配对。
+4. 如果两张卡片不同，则会在短暂显示后自动翻回。
+5. 当所有卡片都完成配对时，游戏胜利。
+
+## 当前界面表现
+
+- 深色背景配合卡片阴影，突出卡牌主体
+- 卡片翻开、按下和悬停时带有视觉反馈
+- 胜利提示以模态覆盖层展示结果
+- 在小屏设备上自动调整标题、间距和卡片字号
+
+## 可扩展方向
+
+如果你打算继续完善这个项目，可以考虑以下方向：
+
+- 增加难度选择，例如 4 x 4、6 x 6 等不同网格规模
+- 增加计时器、最高分或历史记录
+- 增加音效和翻牌动画
+- 增加主题皮肤或更多卡面素材
+- 增加开始页、暂停功能或游戏说明弹窗
+
+## 许可证
+
+当前仓库未声明许可证。如需开源分发，建议补充 `LICENSE` 文件。
